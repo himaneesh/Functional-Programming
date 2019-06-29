@@ -1,0 +1,37 @@
+rc(nangal).
+
+rc(Y):-
+    take(X,Y,Z),
+    rc(Z).
+take(train,chandigarh,mumbai).
+take(car,delhi,chandigarh).
+take(bus,mumbai,nangal).
+
+rc(delhi)
+
+
+
+
+
+
+
+
+Recursion:
+
+on(Item,[Item|List]).
+
+on(Item,[Disregard|Tail]) :-
+	on(Item,Tail).
+
+	
+append([],L,L).
+
+
+append([H|Tail],List2,[H|List3]) :-
+	append(Tail,List2,List3).
+	
+rev([],[]).
+
+rev([H|Tail],List2):-
+	rev(Tail,Result),
+	append(Result,[H],List2).
